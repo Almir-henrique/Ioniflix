@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="carregado" class="enter" [fullscreen]="true">
+  <!-- Container principal que centraliza o conteúdo -->
+  <div class="container-info">
+    <img [src]="filme.poster" class="poster" />
+
+    <h1 class="titulo">{{ filme.titulo }}</h1>
+
+    <p class="info">
+      {{ filme.ano }} • {{ filme.duracao }} • {{ filme.notaIMDB | estrelas }} {{
+      filme.notaIMDB }}
+    </p>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>SINOPSE</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content> {{ filme.sinopse }} </ion-card-content>
+    </ion-card>
+
+    <div>
+      <p class="info"><strong>Diretor:</strong> {{ filme.diretor }}</p>
+      <p class="info"><strong>Elenco:</strong> {{ filme.elenco }}</p>
+    </div>
+  </div>
+</ion-content>

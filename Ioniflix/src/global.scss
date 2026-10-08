@@ -1,0 +1,121 @@
+/* Core CSS do Ionic */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+:root {
+  --vermelho: #e50914;
+  --cinza: #222222;
+  --preto: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.tituloPrincipal {
+  color: var(--vermelho);
+  font-size: 5rem;
+  font-family: "Bebas Neue";
+  text-align: center;
+  margin-top: 5px;
+}
+
+.titulo {
+  text-align: center;
+  font-family: "Bebas Neue";
+  font-size: 4rem;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+ion-content {
+  --background: #141414;
+}
+
+ion-toolbar {
+  height: 10vh;
+  --background: transparent;
+  background-color: rgba(34, 34, 34, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  --color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+ion-tab-bar {
+  height: 10vh;
+  --background: transparent;
+  background-color: rgba(34, 34, 34, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  --color: white;
+  --color-selected: var(--vermelho);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+ion-tab-button {
+  font-size: 1.2rem;
+  background: transparent;
+  transition: 0.4s;
+}
+
+ion-icon {
+  font-size: 2rem;
+}
+
+ion-icon,
+ion-label {
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .tituloPrincipal {
+    font-size: 4rem;
+  }
+  .titulo {
+    font-size: 3rem;
+  }
+  ion-tab-button {
+    font-size: 1rem;
+  }
+  .info {
+    font-size: 1.3rem;
+  }
+}
+
+.enter {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

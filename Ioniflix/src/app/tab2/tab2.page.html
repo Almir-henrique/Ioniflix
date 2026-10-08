@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="tituloPrincipal"> IONIFLIX </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="enter" [fullscreen]="true">
+  <!-- Barra de Pesquisa -->
+
+  <ion-searchbar
+    placeholder="Digite o título do filme..."
+    (ionChange)="pesquisarFilmes($event)"
+  >
+  </ion-searchbar>
+
+  <ion-list style="background: transparent">
+    <ion-grid>
+      <ion-row>
+        @for (filme of listaFilmes; track filme.id) {
+          <ion-col size="12">
+            <ion-card class="filme-card enter">
+              <div class="poster-container">
+                <img alt="Poster do filme" [src]="filme.posterUrl" />
+              </div>
+
+              <ion-card-header>
+                <ion-card-subtitle>{{ filme.ano }}</ion-card-subtitle>
+                <ion-card-title>{{ filme.titulo | titlecase }}</ion-card-title>
+              </ion-card-header>
+
+              <ion-button (click)="abrirDetalhes(filme.id)">
+                Ver Detalhes
+              </ion-button>
+            </ion-card>
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  @if (!pesquisaRealizada && listaFilmes.length === 0) {
+    <div>
+      <p>Pesquise por seus filmes favoritos acima.</p>
+    </div>
+  } @else if (pesquisaRealizada && listaFilmes.length === 0) {
+    <div>
+      <p><strong>Sinto muito!</strong></p>
+      <p>Não foram encontrados resultados para a sua pesquisa.</p>
+    </div>
+  }
+</ion-content>
